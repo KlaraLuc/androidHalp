@@ -1,5 +1,6 @@
 package luc.klara.adventures
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -53,13 +54,10 @@ class FullscreenActivity : AppCompatActivity() {
 
         mVisible = true
 
-        // Set up the user interaction to manually show or hide the system UI.
-//        fullscreen_content.setOnClickListener { toggle() }
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        //dummy_button.setOnTouchListener(mDelayHideTouchListener)
+       start_btn.setOnClickListener{
+           val intent = Intent(this, MainScreen::class.java)
+           startActivity(intent)
+       }
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {

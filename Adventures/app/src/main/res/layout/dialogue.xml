@@ -14,9 +14,9 @@
 
 
         <TextView
-                android:text="@{dialogue.text}"
+                android:text= "@{dialogue.text}"
                 android:layout_width="395dp"
-                android:layout_height="116dp" android:id="@+id/dialogue_tv"
+                android:layout_height="wrap_content" android:id="@+id/dialogue_tv"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
