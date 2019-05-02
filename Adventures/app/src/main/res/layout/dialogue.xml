@@ -5,7 +5,7 @@
         tools:context=".MainScreen">
     <data>
         <variable name="dialogue"
-                  type="luc.klara.adventures.models.DialogueViewModel">
+                  type="luc.klara.adventures.models.DialogueItemViewModel">
         </variable>
     </data>
     <android.support.constraint.ConstraintLayout

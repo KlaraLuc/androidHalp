@@ -1,6 +1,6 @@
 package luc.klara.adventures.models
 
-class DialogueViewModel(val story: Story) {
+class DialogueItemViewModel(val story: Story) {
     val id: String
     val image: String
     val text: String
