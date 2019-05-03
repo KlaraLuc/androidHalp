@@ -1,11 +1,14 @@
 package luc.klara.adventures
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main_screen.*
+import kotlinx.android.synthetic.main.dialogue.*
 import luc.klara.adventures.models.DialogueItemViewModel
 import luc.klara.adventures.models.Story
 import org.json.JSONArray
@@ -18,7 +21,7 @@ import java.lang.Exception
  */
 class MainScreen : AppCompatActivity() {
     private val story = arrayListOf<Story>()
-    private val id: String = "0"
+    private var id: String = "0"
 
     private lateinit var dialogueViewModel: DialogueViewModel
 
@@ -62,14 +65,25 @@ class MainScreen : AppCompatActivity() {
         setContentView(R.layout.activity_main_screen)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        dialogueViewModel = ViewModelProviders.of(this).get(DialogueViewModel::class.java)
+
         mVisible = true
 
         readJSON()
 
-        dialogueViewModel = ViewModelProviders.of(this).get(DialogueViewModel::class.java)
-        val dialogueViewItemList = story.map { DialogueItemViewModel(it) }
+        val initialModel = DialogueItemViewModel(story[0])
 
-        
+        dialogueViewModel.stroy.postValue(initialModel)
+
+
+        println("it begins")
+        choice_one.setOnClickListener{
+            readStory(id + "1")
+        }
+
+        choice_two.setOnClickListener{
+            readStory(id + "2")
+        }
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -150,10 +164,10 @@ class MainScreen : AppCompatActivity() {
 
             var jArray = JSONArray(json)
 
-            for (i in 0 until jArray.length()-1){
+            for (i in 0 until jArray.length() - 1){
                 var obj = jArray.getJSONObject(i)
                 story.add(Story(obj.getString("story"), obj.getString("image"), obj.getString("text"),
-                    obj.getString("button1"), obj.getString("button2")))
+                    obj.getString("button1"), obj.getString("button2"), obj.getString("display")))
             }
 
         } catch (e: Exception){
@@ -162,6 +176,29 @@ class MainScreen : AppCompatActivity() {
     }
 
     fun readStory(id: String){
+        this.id = id
+        val filtered = story.filter { it.id.equals(id) }
+        if(filtered.isNotEmpty()) {
+            val storyModel = DialogueItemViewModel(filtered[0])
+            dialogueViewModel.stroy.postValue(storyModel)
+            if(storyModel.image != ""){
+                character_iv.setImageResource(getDrawable(storyModel.image))
+            } else {
+                character_iv.setImageResource(0)
+            }
 
+            if(storyModel.display != "") {
+                game_background_iv.setImageResource(getDrawable(storyModel.display))
+            }
+        } else {
+            // we need to make the game over scene here
+        }
+    }
+
+    //taken from https://stackoverflow.com/questions/21856260/how-can-i-convert-string-to-drawable
+    fun getDrawable(imgName: String): Int {
+        val name = imgName
+        val id = resources.getIdentifier(name, "drawable", packageName)
+        return id
     }
 }

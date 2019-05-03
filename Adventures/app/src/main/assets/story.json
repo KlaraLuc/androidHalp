@@ -11,11 +11,11 @@
   },
   {
     "story": "01",
-    "image": "",
+    "image": "reiko",
     "text": "The next morning, you meet Yonek at his house and you start your journey to Athron. You ask Yonek how long the trip will take. <br><br>Yonek replies, &#34;It will take about six hours to get to Athron.&#34; <br><br>Both of you get on your speeders and begin your trip. About halfway through your trip, a giant storm moves in begins to flood the highway with water and ice. A huge gust of wind knocks you off your speeder. You go tumbling down a hillside into a canyon. Luckily, a safety bubble deployed when you were disengaged from the speeder. You climb out of the bubble and have a decision to make... Climb back up the hillside or follow the river that runs along the canyon bottom?",
     "button1": "Climb up the hillside",
     "button2": "Follow the river",
-    "display": ""
+    "display": "room"
   },
   {
     "story": "02",
@@ -31,11 +31,11 @@
     "text": "You start the climb up the hillside, but it&#39s really muddy and you keep sliding back down to the bottom. Exhausted, you look for a dry area to rest. You spot what looks like a cave, so you carefully walk over and examine it. You are aware of the legends about  a dragon-like beast that live in these hills, so you grab a large stick just in case. The emergency bubble had a survival kit, so you take the flashlight out and shine it inside the cave. As you shine the light deeper inside the cave, you notice what looks like a pair of eyes staring back at you. Yikes!!! Should you make a run for it out of the cave or do you find out what might be in the cave?",
     "button1": "Make a run for it!!!",
     "button2": "Venture deeper into the cave and find out what might be in there",
-    "display": ""
+    "display": "shrine1"
   },
   {
     "story": "012",
-    "image": "",
+    "image": "reiko",
     "text": "You start walking along the river bank. It is cold and wet, but you continue along the river until you see a bridge. In the distance, you notice somebody on a speeder waving at you. It&#39s Yonek!!! When you finally reach the bridge and Yonek, he hands you hot cup of tea. <br><br>He asks, &#34;What happened to you? All of a sudden, I looked back and you weren&#39t there, so I pulled over at the first bridge crossing hoping you would show up.&#34; <br><br>You reply, &#34;I fell off my speeder and slid down a hillside, so I decided to follow the river out. I am so happy to see you!&#34; <br><br>Once you warm up and dry off a bit, you climb on the back of Yonek&#39s speeder and the two of you finish your ride to Athron. You finally make it to the big city. Upon arrival, there are lots of robotic companies looking for new engineers. Both you and Yonek narrow the offers down to two. One company offers the chance to build robots that can pilot ships. The other company builds robots that carry out spy missions. Which sounds best?",
     "button1": "I want to build robot pilots",
     "button2": "I want to build robot spies",
@@ -47,7 +47,7 @@
     "text": "You and Danii board the transport ship the next afternoon. Your next destination is a planet called Danobulan. The captain instructs you to take a look at the starboard (right-side) engine. He says it has been acting funny and is not 100 percent. While working on the engine, the ship comes to a full stop. Puzzled, you leave the engine room to find out what has happened. You hear a large blast, so you take cover. There is a lot of shouting and you spot the captain with another figure in the shadow. Suddenly, the shadowy figure pulls out an energy sword and strikes the captain down. You gasp as he hits the floor. The shadowy figure notices you and casually walks over to your position. Petrified with fear, you are speechless. The figure removes her hood and glares at you with her glowing eyes. <br><br>She demands, &#34;Join me or perish!!!&#34; <br><br>You are left with two choices, join her or battle her",
     "button1": "Join her",
     "button2": "Battle her",
-    "display": ""
+    "display": "shrine2"
   },
   {
     "story": "022",

@@ -6,6 +6,7 @@ class DialogueItemViewModel(val story: Story) {
     val text: String
     val choice_one: String
     val choice_two: String
+    val display: String
 
     init {
         id = story.id
@@ -13,5 +14,6 @@ class DialogueItemViewModel(val story: Story) {
         text = story.text
         choice_one = story.choice_one
         choice_two = story.choice_two
+        display = story.display
     }
 }

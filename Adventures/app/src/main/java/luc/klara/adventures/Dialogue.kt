@@ -1,5 +1,6 @@
 package luc.klara.adventures
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.databinding.DataBindingUtil
 import luc.klara.adventures.databinding.DialogueBinding
+import luc.klara.adventures.models.Story
 
 class Dialogue : Fragment() {
     companion object {
@@ -29,5 +31,13 @@ class Dialogue : Fragment() {
         activity?.let{
             viewModel = ViewModelProviders.of(it).get(DialogueViewModel::class.java)
         }
+
+        viewModel.stroy.observe(this, Observer {
+            story ->
+
+            story?.let {
+                binding.dialogue = it
+            }
+        })
     }
 }
